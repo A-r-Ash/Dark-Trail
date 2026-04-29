@@ -24,9 +24,17 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
     [Header("Light Settings")]
     [SerializeField] protected bool afraidOfLight = true;
 
+    [Header("Audio")]
+    [SerializeField] protected AudioClip hurtAudioClip;
+    [SerializeField] protected AudioClip deathAudioClip;
+    [SerializeField] protected AudioClip footstepAudioClip;
+    [SerializeField] protected float     footstepInterval = 0.5f;
+
     [Header("References")]
     [SerializeField] protected Transform player;
     [SerializeField] protected Light     playerFlashlight;
+
+    protected AudioSource audioSource;
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
@@ -46,6 +54,7 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
     protected Vector3 spawnPosition;
     protected float   currentHealth;
     protected bool    isDead;
+    private   float   footstepTimer;
 
     // ── Lifecycle ─────────────────────────────────────────────────────────────
 
@@ -53,6 +62,10 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
     {
         spawnPosition = transform.position;
         currentHealth = maxHealth;
+
+        audioSource             = gameObject.AddComponent<AudioSource>();
+        audioSource.spatialBlend = 1f;
+        audioSource.playOnAwake  = false;
 
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
@@ -90,6 +103,8 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
                     lastAttackTime = Time.time;
                 }
             }
+
+        TickFootstep();
     }
 
     // ── ICreature ─────────────────────────────────────────────────────────────
@@ -142,12 +157,28 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
         return Vector3.Distance(transform.position, player.position) <= killRange;
     }
 
+    void TickFootstep()
+    {
+        if (footstepAudioClip == null) return;
+        if (currentState != CreatureState.Chasing && currentState != CreatureState.Retreating) return;
+        footstepTimer -= Time.deltaTime;
+        if (footstepTimer <= 0f)
+        {
+            audioSource.PlayOneShot(footstepAudioClip);
+            footstepTimer = footstepInterval;
+        }
+    }
+
     public virtual void TakeDamage(float damage)
     {
         if (isDead) return;
         currentHealth -= damage;
         if (currentHealth <= 0f) Die();
-        else SetTrigger("Hurt");
+        else
+        {
+            SetTrigger("Hurt");
+            if (hurtAudioClip != null) audioSource.PlayOneShot(hurtAudioClip);
+        }
     }
 
     public virtual void TakeBulletDamage(float damage) => TakeDamage(damage);
@@ -160,6 +191,7 @@ public abstract class CreatureBase : MonoBehaviour, ICreature
         isDead = true;
         StopAllCoroutines();
         SetTrigger("Die");
+        if (deathAudioClip != null) audioSource.PlayOneShot(deathAudioClip);
         StartCoroutine(DieAfterDelay(dieClip != null ? dieClip.length : 0f));
     }
 

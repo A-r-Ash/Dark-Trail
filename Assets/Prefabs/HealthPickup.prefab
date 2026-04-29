@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83717e5719ddec448d66d9b2235384d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
-  gemColor: {r: 0.2, g: 0.8, b: 1, a: 1}
+  gemColor: {r: 0, g: 0.12190819, b: 1, a: 1}
   spinSpeed: 90
   bobHeight: 0.18
   bobSpeed: 1.4

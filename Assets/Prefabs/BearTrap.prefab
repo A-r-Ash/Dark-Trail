@@ -72,5 +72,5 @@ MonoBehaviour:
   triggerRadius: 0.4
   triggerSound: {fileID: 8300000, guid: 2b029a5c00bd1e24da276c7d067a0445, type: 3}
   rearmSound: {fileID: 8300000, guid: f262c6d2b6c86b64dba738de81f1e13b, type: 3}
-  armedColor: {r: 0.55, g: 0.08, b: 0.08, a: 1}
-  triggeredColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
+  armedColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  triggeredColor: {r: 1, g: 1, b: 1, a: 1}

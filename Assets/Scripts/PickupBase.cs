@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class PickupBase : MonoBehaviour
 {
     [Header("Appearance")]
-    [SerializeField] protected Color  gemColor    = new Color(0.2f, 0.8f, 1f);
+    protected Color gemColor = new Color(0.2f, 0.8f, 1f);
     [SerializeField] private   float  spinSpeed   = 90f;
     [SerializeField] private   float  bobHeight   = 0.18f;
     [SerializeField] private   float  bobSpeed    = 1.4f;

@@ -1,73 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &730587360227269722
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8139280229996289614}
-  - component: {fileID: 4825137146155196131}
-  - component: {fileID: 2449567899583483097}
-  m_Layer: 0
-  m_Name: TutorialTrigger_BIgCreature
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8139280229996289614
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730587360227269722}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.001405455, y: 0.004062568, z: 0.0075956746, w: 0.9999619}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 8}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2713831016041603472}
-  m_LocalEulerAnglesHint: {x: 0.158, y: 0.467, z: 0.871}
---- !u!65 &4825137146155196131
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730587360227269722}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9.92, y: 2.17, z: 1}
-  m_Center: {x: -1.12, y: 0.83, z: 0}
---- !u!114 &2449567899583483097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730587360227269722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc422b1b8d8d7ef4187bc96b4e84536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialTrigger
-  tutorialType: 5
-  showOnce: 1
 --- !u!1 &8698835524044554267
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +33,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2856511041424806088}
-  - {fileID: 8139280229996289614}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3430224159414855769
@@ -157,7 +88,9 @@ MonoBehaviour:
   flashlightRangeOffset: 2
   attackCooldown: 1
   maxHealth: 200
-  afraidOfLight: 1
+  afraidOfLight: 0
+  hurtAudioClip: {fileID: 8300000, guid: ded37f73a9833e846a3e538b31f0a5bb, type: 3}
+  deathAudioClip: {fileID: 8300000, guid: e04542352f14db14181b97a584c2f68f, type: 3}
   player: {fileID: 0}
   playerFlashlight: {fileID: 0}
   animator: {fileID: 0}
@@ -167,6 +100,14 @@ MonoBehaviour:
   attackClip: {fileID: 5986441339452506603, guid: bed23b9cb0c7e744cba0ca47539804c2, type: 2}
   hurtClip: {fileID: 5986441339452506603, guid: bed23b9cb0c7e744cba0ca47539804c2, type: 2}
   dieClip: {fileID: 3508521010728280400, guid: bed23b9cb0c7e744cba0ca47539804c2, type: 2}
+  chargeSpeed: 18
+  windupDuration: 0.85
+  chargeMaxDistance: 14
+  recoverDuration: 1.2
+  lightSlowMultiplier: 0.22
+  roarClip: {fileID: 8300000, guid: c02b3a316fd936e439a352ff86a741f0, type: 3}
+  impactClip: {fileID: 8300000, guid: 701f262a38946054f91de6d5c4feaea2, type: 3}
+  stompClip: {fileID: 8300000, guid: 9ba840f482d1b6a4f93206aa94fee628, type: 3}
 --- !u!1001 &2319042462152537891
 PrefabInstance:
   m_ObjectHideFlags: 0

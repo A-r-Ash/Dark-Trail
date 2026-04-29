@@ -66,11 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400715ad3a5226c4696d05816ac76766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoPickup
-  gemColor: {r: 1, g: 0.8153348, b: 0.2971698, a: 1}
   spinSpeed: 90
   bobHeight: 0.18
   bobSpeed: 1.4
   glowIntensity: 15
   collectRadius: 2
   pickupSound: {fileID: 8300000, guid: a9a7ae9b497f2a342b2f6259e5b3bc28, type: 3}
-  ammoAmount: 12
+  pickupColor: {r: 1, g: 0.8353392, b: 0, a: 1}
+  ammoAmount: 3

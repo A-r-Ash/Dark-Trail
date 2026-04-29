@@ -19,11 +19,11 @@ MonoBehaviour:
   range: 80
   magazineSize: 6
   maxReserveAmmo: 48
-  reloadTime: 6
+  reloadTime: 2
   drawTime: 0.3
   hipSpread: 4
   adsSpread: 0.6
   fireSound: {fileID: 8300000, guid: 6180d98daa20c7242991b1f64c48edf5, type: 3}
-  reloadSound: {fileID: 8300000, guid: 6405b0d209972154db0120e84a2221f5, type: 3}
+  reloadSound: {fileID: 8300000, guid: ab16c671cd792d24c83eee7a250046bd, type: 3}
   emptyClickSound: {fileID: 0}
   drawSound: {fileID: 8300000, guid: 414285acd6f7003458e4112ad20b7982, type: 3}

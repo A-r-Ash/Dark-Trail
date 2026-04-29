@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class HealthPickup : PickupBase
 {
-    [SerializeField] private int healAmount = 1;
+    [SerializeField] private Color pickupColor = new Color(0.1f, 0.85f, 0.2f);
+    [SerializeField] private int   healAmount  = 1;
+    public void Init(int amount) => healAmount = amount;
 
     protected override void Awake()
     {
-        gemColor = new Color(0.1f, 0.85f, 0.2f);   // green
+        gemColor = pickupColor;
         base.Awake();
     }
 

@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!114 &3134154452032313936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,11 +129,16 @@ MonoBehaviour:
   chaseSpeed: 3
   retreatSpeed: 6
   detectionRange: 60
-  killRange: 1
+  killRange: 5
   flashlightRangeOffset: 2
+  attackCooldown: 1
   maxHealth: 100
   afraidOfLight: 1
-  player: {fileID: 0}
+  hurtAudioClip: {fileID: 0}
+  deathAudioClip: {fileID: 0}
+  footstepAudioClip: {fileID: 0}
+  footstepInterval: 0.5
+  player: {fileID: 5792286082910762189, guid: 2b9696f690f66c34f833b524b7704489, type: 3}
   playerFlashlight: {fileID: 0}
   animator: {fileID: 0}
   idleClip: {fileID: 0}
@@ -143,8 +148,8 @@ MonoBehaviour:
   hurtClip: {fileID: 0}
   dieClip: {fileID: 0}
   strafeRadius: 12
-  strafeSpeed: 2
-  fireInterval: 1
+  strafeSpeed: 4
+  fireInterval: 2
   projectilePrefab: {fileID: 2363972124237645905, guid: 36bd83958247ec24fa81118136c38a29, type: 3}
 --- !u!114 &2099568338208261955
 MonoBehaviour:

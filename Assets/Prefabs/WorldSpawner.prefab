@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2804779010257642314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7798819947360528414}
+  m_Layer: 0
+  m_Name: Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7798819947360528414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804779010257642314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2246972607171689772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5582369236043363357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2246972607171689772}
+  - component: {fileID: 8036690840798023757}
+  m_Layer: 0
+  m_Name: WorldSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2246972607171689772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582369236043363357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -209.6, y: 0.36129, z: 2.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 7798819947360528414}
+  - {fileID: 8002217974309026524}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8036690840798023757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582369236043363357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b49b7a74d448a4aa13ae2b84050202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldSpawner
+  areaCenter: {fileID: 7798819947360528414}
+  minSpawnRadius: 1.58
+  maxSpawnRadius: 50
+  groundRaycastHeight: 400
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  spawnCreatures: 1
+  creatureEntries:
+  - label: SmallCreature
+    prefab: {fileID: 7853370411679242671, guid: ac66e1b57e04dd349a96648313053c87, type: 3}
+    fallbackType: 4
+    weight: 0
+    minThreat: 0
+    isSwarm: 0
+    swarmSize: 0
+  - label: BigCreature
+    prefab: {fileID: 8698835524044554267, guid: 04f1d1e175a433041b520d4fbf6042b2, type: 3}
+    fallbackType: 0
+    weight: 0.209
+    minThreat: 0
+    isSwarm: 0
+    swarmSize: 0
+  - label: RangedCreature
+    prefab: {fileID: 6177453927649946246, guid: 9987889a94de4334ab0cf0b6b479a132, type: 3}
+    fallbackType: 1
+    weight: 0.203
+    minThreat: 0
+    isSwarm: 0
+    swarmSize: 0
+  - label: SpeedyCreature
+    prefab: {fileID: 6540567178676801080, guid: cb646e97e01514844b14e7b8324e655f, type: 3}
+    fallbackType: 0
+    weight: 0.368
+    minThreat: 0
+    isSwarm: 0
+    swarmSize: 0
+  - label: SwarmCreature
+    prefab: {fileID: 8049967446799027604, guid: 49d22122241fcbe4ba62ff611222c57f, type: 3}
+    fallbackType: 3
+    weight: 0.368
+    minThreat: 0
+    isSwarm: 0
+    swarmSize: 0
+  baseInterval: 2
+  minInterval: 2
+  maxAlive: 40
+  spawnHealth: 1
+  healthPool:
+    targetCount: 10
+    respawnDelay: 500
+    amount: 1
+  spawnAmmo: 1
+  ammoPool:
+    targetCount: 10
+    respawnDelay: 500
+    amount: 3
+  overlapCheckRadius: 1
+  obstaclesMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!1 &7579405634910830398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8002217974309026524}
+  - component: {fileID: 1150873599031769726}
+  m_Layer: 0
+  m_Name: Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8002217974309026524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579405634910830398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2246972607171689772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1150873599031769726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579405634910830398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79513f99bab98904fb4930e89ecbada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupSpawnPoint
+  healthAllowed: 1
+  ammoAllowed: 1

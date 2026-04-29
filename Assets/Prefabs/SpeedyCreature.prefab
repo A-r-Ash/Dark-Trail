@@ -57,9 +57,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2.66
+  m_Height: 4.98
   m_Direction: 1
-  m_Center: {x: 0, y: 0.18, z: 0}
+  m_Center: {x: 0, y: 1.43, z: 0}
 --- !u!114 &5104436674149115384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   chaseSpeed: 6
   retreatSpeed: 10
   detectionRange: 35.9
-  killRange: 1.14
+  killRange: 2.07
   flashlightRangeOffset: 2
   attackCooldown: 1
   maxHealth: 100

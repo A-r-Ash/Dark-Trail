@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class AmmoPickup : PickupBase
 {
-    [SerializeField] private int ammoAmount = 12;
+    [SerializeField] private Color pickupColor = new Color(1f, 0.7f, 0.1f);
+    [SerializeField] private int   ammoAmount  = 12;
+    public void Init(int amount) => ammoAmount = amount;
 
     protected override void Awake()
     {
+        gemColor = pickupColor;
         base.Awake();
     }
 
